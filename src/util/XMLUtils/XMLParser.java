@@ -11,7 +11,7 @@ import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 public class XMLParser {
 	  public static void main(String argv[]) {
 		  //parse("XMLResources/rssNews.xml", "title");
-		  parse("XMLResources/marfSample1.xml");
+		  //parse("XMLResources/marfSample1.xml");
 		  //parse("XMLResources/marfcat-in.xml");
 		  //parse("XMLResources/marfcat-out.xml");
 		  //parse("XMLResources/faultSample.wsdl");
@@ -88,11 +88,11 @@ public class XMLParser {
 		  }
 	  }*/
 	  
-	  public static void parse(String fileName){
+	  public static void parse(Document doc){
 		  try {
-			    DOMParser parser = new DOMParser();
+			    /*DOMParser parser = new DOMParser();
 			    parser.parse(fileName);
-			    Document doc = parser.getDocument();
+			    Document doc = parser.getDocument();*/
 			    // Get the document's root XML node
 			    NodeList root = doc.getChildNodes();
 			    parseNodeList(root);
@@ -102,11 +102,11 @@ public class XMLParser {
 			} 
 	  }
 	  
-	  public static void parse(String fileName, String rootNode){
+	  public static void parse(Document doc, String rootNode){
 		  try {
-			    DOMParser parser = new DOMParser();
+			    /*DOMParser parser = new DOMParser();
 			    parser.parse(fileName);
-			    Document doc = parser.getDocument();
+			    Document doc = parser.getDocument();*/
 			    // Get the document's root XML node
 			    NodeList root = doc.getElementsByTagName(rootNode);
 			    parseNodeList(root);
