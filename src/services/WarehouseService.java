@@ -1,6 +1,7 @@
 package services;
 
 import model.Customer;
+import model.Item;
 import model.ItemList;
 import model.ItemShippingStatusList;
 
@@ -22,7 +23,14 @@ public class WarehouseService {
 		tory of some items is lower than a threshold (dened by you), order the items from the
 		Manufacturer. You can decide how many to order.*/
 		private void replenish(){
-			//TODO
+			//TODO - get all items from xml file
+			ItemList itemList = new ItemList();
+			for (Item currentItem : itemList)
+			{
+				if (currentItem.getQuantity() < 10)
+					currentItem.setQuantity(currentItem.getQuantity() + 10);
+			}
+			//TODO - write all items from xml file
 		}
 		
 }

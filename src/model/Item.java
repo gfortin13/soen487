@@ -8,13 +8,13 @@ public class Item {
 	@XmlElement(name = "manufacturerName")
 	private String manufacturerName;
 	@XmlElement(name = "productType")
-	private ProductType productType;
+	private String productType;
 	@XmlElement(name = "unitPrice")
 	private float unitPrice;
 	@XmlElement(name = "quantity")
 	private int quantity;
 	
-	public Item(String manufacturerName, ProductType productType, float unitPrice, int quantity){
+	public Item(String manufacturerName, String productType, float unitPrice, int quantity){
 		this.manufacturerName = manufacturerName;
 		this.productType = productType;
 		this.unitPrice = unitPrice;
@@ -33,11 +33,11 @@ public class Item {
 		this.manufacturerName = manufacturerName;
 	}
 
-	public ProductType getProductType() {
+	public String getProductType() {
 		return productType;
 	}
 
-	public void setProductType(ProductType productType) {
+	public void setProductType(String productType) {
 		this.productType = productType;
 	}
 

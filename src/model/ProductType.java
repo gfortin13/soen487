@@ -1,5 +1,9 @@
 package model;
 
+/*
+ * We are currently not using this enum
+ */
+
 public enum ProductType {
 	DVDPLAYER("DVD Player"),
 	VIDEOCAMERA ("Video Camera"),

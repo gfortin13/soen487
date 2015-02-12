@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProductList xmlns="WarehouseProductList.xsd">
+	<Product>
+		<ManufacturerName>Kobayashi</ManufacturerName>
+		<ModelNumber>X950</ModelNumber>
+		<ProductType>TV</ProductType>
+		<Price>699.99</Price>
+		<CurrentStock>9</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Kobayashi</ManufacturerName>
+		<ModelNumber>X1050</ModelNumber>
+		<ProductType>TV</ProductType>
+		<Price>899.99</Price>
+		<CurrentStock>8</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Kobayashi</ManufacturerName>
+		<ModelNumber>X1250</ModelNumber>
+		<ProductType>TV</ProductType>
+		<Price>1299.99</Price>
+		<CurrentStock>4</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Reno</ManufacturerName>
+		<ModelNumber>500</ModelNumber>
+		<ProductType>Video Camera</ProductType>
+		<Price>359.99</Price>
+		<CurrentStock>3</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Reno</ManufacturerName>
+		<ModelNumber>600</ModelNumber>
+		<ProductType>Video Camera</ProductType>
+		<Price>459.99</Price>
+		<CurrentStock>4</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Reno</ManufacturerName>
+		<ModelNumber>900</ModelNumber>
+		<ProductType>Video Camera</ProductType>
+		<Price>499.99</Price>
+		<CurrentStock>4</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Soomba</ManufacturerName>
+		<ModelNumber>B50</ModelNumber>
+		<ProductType>DVD Player</ProductType>
+		<Price>89.99</Price>
+		<CurrentStock>12</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Soomba</ManufacturerName>
+		<ModelNumber>B80</ModelNumber>
+		<ProductType>DVD Player</ProductType>
+		<Price>109.99</Price>
+		<CurrentStock>10</CurrentStock>
+	</Product>
+	<Product>
+		<ManufacturerName>Soomba</ManufacturerName>
+		<ModelNumber>B90</ModelNumber>
+		<ProductType>DVD Player</ProductType>
+		<Price>129.99</Price>
+		<CurrentStock>10</CurrentStock>
+	</Product>
+</ProductList>

@@ -9,13 +9,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
 	@XmlElement(name = "productType")
-	private ProductType productType;
+	private String productType;
 	@XmlElement(name = "manufacturerName")
 	private String manufacturerName;
 	@XmlElement(name = "unitPrice")
 	private float unitPrice;
 	
-	public Product(ProductType productType, String manufacturerName, float unitPrice){
+	public Product(String productType, String manufacturerName, float unitPrice){
 		this.productType = productType;
 		this.manufacturerName = manufacturerName;
 		this.unitPrice = unitPrice;
@@ -24,11 +24,11 @@ public class Product {
 	public Product(){
 	}
 
-	public ProductType getProductType() {
+	public String getProductType() {
 		return productType;
 	}
 
-	public void setProductType(ProductType productType) {
+	public void setProductType(String productType) {
 		this.productType = productType;
 	}
 
