@@ -1,4 +1,4 @@
-package SupplyChain;
+package model;
 
 public enum ProductType {
 	DVDPLAYER("DVD Player"),

@@ -1,4 +1,8 @@
-package SupplyChain;
+package services;
+
+import model.Customer;
+import model.ItemList;
+import model.ItemShippingStatusList;
 
 public class WarehouseService {
 

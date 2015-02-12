@@ -1,4 +1,4 @@
-package SupplyChain;
+package model;
 
 public class Customer {
 	

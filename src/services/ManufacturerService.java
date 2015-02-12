@@ -1,4 +1,7 @@
-package SupplyChain;
+package services;
+
+import model.Product;
+import model.PurchaseOrder;
 
 public class ManufacturerService {
 

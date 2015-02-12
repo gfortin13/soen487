@@ -1,4 +1,4 @@
-package SupplyChain;
+package model;
 
 import java.util.ArrayList;
 
