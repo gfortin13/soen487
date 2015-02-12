@@ -2,7 +2,7 @@ package model;
 
 public enum ProductType {
 	DVDPLAYER("DVD Player"),
-	VideoCamera ("Video Camera"),
+	VIDEOCAMERA ("Video Camera"),
 	TV ("TV");
 	
 	private final String name;       

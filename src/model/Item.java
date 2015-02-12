@@ -1,10 +1,17 @@
 package model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "Item")
 public class Item {
-	
+	@XmlElement(name = "manufacturerName")
 	private String manufacturerName;
+	@XmlElement(name = "productType")
 	private ProductType productType;
+	@XmlElement(name = "unitPrice")
 	private float unitPrice;
+	@XmlElement(name = "quantity")
 	private int quantity;
 	
 	public Item(String manufacturerName, ProductType productType, float unitPrice, int quantity){
@@ -12,6 +19,10 @@ public class Item {
 		this.productType = productType;
 		this.unitPrice = unitPrice;
 		this.quantity = quantity;
+	}
+	
+	public Item(){
+		
 	}
 
 	public String getManufacturerName() {
