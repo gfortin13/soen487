@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/KobayashiProducts" xmlns:tns="http://www.example.org/KobayashiProducts" elementFormDefault="qualified">
-<xsd:element name="KobayashiProducts">
+<xsd:element name="ProductList">
 	<xsd:complexType>
 		<xsd:sequence>
 			<xsd:element name="Product" maxOccurs="unbounded">
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="ManufacturerName" type="xsd:string" />
-						<xsd:element name="ModelNumber" type="xsd:string" />
 						<xsd:element name="ProductType" type="xsd:string" />
-						<xsd:element name="Price" type="xsd:decimal" />
+						<xsd:element name="UnitPrice" type="xsd:decimal" />	
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>

@@ -8,11 +8,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Product")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Product {
-	@XmlElement(name = "productType")
+	@XmlElement(name = "ProductType")
 	private String productType;
-	@XmlElement(name = "manufacturerName")
+	@XmlElement(name = "ManufacturerName")
 	private String manufacturerName;
-	@XmlElement(name = "unitPrice")
+	@XmlElement(name = "UnitPrice")
 	private float unitPrice;
 	
 	public Product(String productType, String manufacturerName, float unitPrice){

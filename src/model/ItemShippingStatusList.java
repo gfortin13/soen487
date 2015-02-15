@@ -1,8 +1,22 @@
 package model;
 
-public class ItemShippingStatusList {
+import java.util.HashMap;
 
+public class ItemShippingStatusList extends HashMap<Item, String>{
+
+	HashMap<Item, String> statusList;
+	
 	public ItemShippingStatusList(){
-		//TODO
+		statusList = new HashMap<Item, String>();
+	}
+	
+	public String put(Item i, String status){
+		if (status.compareTo("shipped") == 0 || status.compareTo("not shipped") == 0)
+		{
+			statusList.put(i, status);
+			return status;
+		}
+		else
+			return null;
 	}
 }

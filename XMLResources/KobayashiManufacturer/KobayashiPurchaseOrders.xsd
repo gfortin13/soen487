@@ -1,3 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/KobayashiPurchaseOrders" xmlns:tns="http://www.example.org/KobayashiPurchaseOrders" elementFormDefault="qualified">
-</schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/KobayashiPurchaseOrders" xmlns:tns="http://www.example.org/KobayashiPurchaseOrders" elementFormDefault="qualified">
+<xsd:element name="PurchaseOrders">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="PurchaseOrder" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="OrderNum" type="xsd:string" />
+						<xsd:element name="CustomerRef" type="xsd:string" />
+						<xsd:element name="Product">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="ProductType" type="xsd:string" />
+									<xsd:element name="ManufacturerName" type="xsd:string" />
+									<xsd:element name="UnitPrice" type="xsd:decimal" />	
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="Quantity" type="xsd:integer" />
+						<xsd:element name="UnitPrice" type="xsd:decimal" />	
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+</xsd:schema>

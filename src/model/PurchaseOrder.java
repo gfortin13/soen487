@@ -1,10 +1,22 @@
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "PurchaseOrder")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class PurchaseOrder {
+	@XmlElement(name = "OrderNum")
 	private String orderNum;
+	@XmlElement(name = "CustomerRef")
 	private String customerRef;
+	@XmlElement(name = "Product")
 	private Product product;
+	@XmlElement(name = "Quantity")
 	private int quantity;
+	@XmlElement(name = "UnitPrice")
 	private float unitPrice;
 	
 	public PurchaseOrder(String orderNum, String customerRef, Product product, int quantity, float unitPrice){

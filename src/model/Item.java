@@ -5,13 +5,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Item")
 public class Item {
-	@XmlElement(name = "manufacturerName")
+	@XmlElement(name = "ManufacturerName")
 	private String manufacturerName;
-	@XmlElement(name = "productType")
+	@XmlElement(name = "ProductType")
 	private String productType;
-	@XmlElement(name = "unitPrice")
+	@XmlElement(name = "UnitPrice")
 	private float unitPrice;
-	@XmlElement(name = "quantity")
+	@XmlElement(name = "Quantity")
 	private int quantity;
 	
 	public Item(String manufacturerName, String productType, float unitPrice, int quantity){
@@ -55,5 +55,13 @@ public class Item {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	public boolean equals (Object o){
+		if(o instanceof Item){
+			Item toCompare = (Item) o;
+		    return (this.manufacturerName.equals(toCompare.manufacturerName) && this.productType.equals(toCompare.productType));
+		  }
+		  return false;
 	}
 }

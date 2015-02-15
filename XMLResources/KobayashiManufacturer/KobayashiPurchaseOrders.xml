@@ -1,1 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<PurchaseOrders xmlns="KobayashiPurchaseOrders.xsd">
+	<PurchaseOrder>
+		<OrderNum>4da65d4a</OrderNum>
+		<CustomerRef>89qwe7q8ew</CustomerRef>
+		<Product>
+			<ManufacturerName>Kobayashi</ManufacturerName>
+			<ProductType>TV</ProductType>
+			<UnitPrice>999.99</UnitPrice>
+		</Product>
+		<Quantity>1</Quantity>
+		<UnitPrice>1299.99</UnitPrice>
+	</PurchaseOrder>
+	<PurchaseOrder>
+		<OrderNum>4da65d4a</OrderNum>
+		<CustomerRef>89qwe7q8ew</CustomerRef>
+		<Product>
+			<ManufacturerName>Kobayashi</ManufacturerName>
+			<ProductType>DVD Player</ProductType>
+			<UnitPrice>99.99</UnitPrice>
+		</Product>
+		<Quantity>1</Quantity>
+		<UnitPrice>149.99</UnitPrice>
+	</PurchaseOrder>
+	<PurchaseOrder>
+		<OrderNum>4da51sde</OrderNum>
+		<CustomerRef>89qwe72x3c</CustomerRef>
+		<Product>
+			<ManufacturerName>Kobayashi</ManufacturerName>
+			<ProductType>TV</ProductType>
+			<UnitPrice>999.99</UnitPrice>
+		</Product>
+		<Quantity>1</Quantity>
+		<UnitPrice>1299.99</UnitPrice>
+	</PurchaseOrder>
+</PurchaseOrders>
