@@ -18,13 +18,16 @@ public class PurchaseOrder {
 	private int quantity;
 	@XmlElement(name = "UnitPrice")
 	private float unitPrice;
+	@XmlElement(name = "PaymentStatus")
+	private String paymentStatus;
 	
-	public PurchaseOrder(String orderNum, String customerRef, Product product, int quantity, float unitPrice){
+	public PurchaseOrder(String orderNum, String customerRef, Product product, int quantity, float unitPrice, String paymentStatus){
 		this.orderNum = orderNum;
 		this.customerRef = customerRef;
 		this.product = product;
 		this.quantity = quantity;
 		this.unitPrice = unitPrice;
+		this.paymentStatus = paymentStatus;
 	}
 
 	public String getOrderNum() {
@@ -65,5 +68,13 @@ public class PurchaseOrder {
 
 	public void setUnitPrice(float unitPrice) {
 		this.unitPrice = unitPrice;
+	}
+	
+	public String getPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(String paymentStatus) {
+		this.paymentStatus = paymentStatus;
 	}
 }

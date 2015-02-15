@@ -19,6 +19,7 @@
 						</xsd:element>
 						<xsd:element name="Quantity" type="xsd:integer" />
 						<xsd:element name="UnitPrice" type="xsd:decimal" />	
+						<xsd:element name="PaymentStatus" type="xsd:string" />	
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>

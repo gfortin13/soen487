@@ -4,48 +4,54 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "Product")
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name="Product", propOrder={
+		"ManufacturerName",
+		"ProductType",
+		"UnitPrice"
+})
 public class Product {
-	@XmlElement(name = "ProductType")
-	private String productType;
 	@XmlElement(name = "ManufacturerName")
-	private String manufacturerName;
+	private String ManufacturerName;
+	@XmlElement(name = "ProductType")
+	private String ProductType;
 	@XmlElement(name = "UnitPrice")
-	private float unitPrice;
+	private float UnitPrice;
 	
 	public Product(String productType, String manufacturerName, float unitPrice){
-		this.productType = productType;
-		this.manufacturerName = manufacturerName;
-		this.unitPrice = unitPrice;
+		this.ProductType = productType;
+		this.ManufacturerName = manufacturerName;
+		this.UnitPrice = unitPrice;
 	}
 	
 	public Product(){
 	}
 
 	public String getProductType() {
-		return productType;
+		return ProductType;
 	}
 
 	public void setProductType(String productType) {
-		this.productType = productType;
+		this.ProductType = productType;
 	}
 
 	public String getManufacturerName() {
-		return manufacturerName;
+		return ManufacturerName;
 	}
 
 	public void setManufacturerName(String manufacturerName) {
-		this.manufacturerName = manufacturerName;
+		this.ManufacturerName = manufacturerName;
 	}
 	
 	public float getUnitPrice() {
-		return unitPrice;
+		return UnitPrice;
 	}
 
 	public void setUnitPrice(float unitPrice) {
-		this.unitPrice = unitPrice;
+		this.UnitPrice = unitPrice;
 	}
 	
 }

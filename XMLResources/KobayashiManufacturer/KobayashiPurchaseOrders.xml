@@ -10,6 +10,7 @@
 		</Product>
 		<Quantity>1</Quantity>
 		<UnitPrice>1299.99</UnitPrice>
+		<PaymentStatus>not paid</PaymentStatus>
 	</PurchaseOrder>
 	<PurchaseOrder>
 		<OrderNum>4da65d4a</OrderNum>
@@ -21,6 +22,7 @@
 		</Product>
 		<Quantity>1</Quantity>
 		<UnitPrice>149.99</UnitPrice>
+		<PaymentStatus>not paid</PaymentStatus>
 	</PurchaseOrder>
 	<PurchaseOrder>
 		<OrderNum>4da51sde</OrderNum>
@@ -32,5 +34,6 @@
 		</Product>
 		<Quantity>1</Quantity>
 		<UnitPrice>1299.99</UnitPrice>
+		<PaymentStatus>not paid</PaymentStatus>
 	</PurchaseOrder>
 </PurchaseOrders>

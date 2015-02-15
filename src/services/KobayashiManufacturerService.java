@@ -17,6 +17,7 @@ public class KobayashiManufacturerService {
 	private final String PRODUCTSXMLPATH = "XMLResources/KobayashiManufacturer/KobayashiProducts.xml";
 	private final String PURCHASEORDERSXMLPATH = "XMLResources/KobayashiManufacturer/KobayashiPurchaseOrders.xml";
 	private ProductList products;
+	private PurchaseOrderList purchaseOrders; 
 	
 	/*This operation is called by the warehouse service. If the unit price is higher or equal to the
 	defined price in the XML File, call produce() to produce this product; otherwise return
@@ -51,7 +52,9 @@ public class KobayashiManufacturerService {
 					remainingUnits = remainingUnits - 100;
 				}
 			}
-			//TODO - record the order to an xml file
+			loadPurchaseOrders();
+			purchaseOrders.add(aPO);
+			updatePurchaseOrders();
 			return true;
 		}
 			return false;
@@ -78,14 +81,16 @@ public class KobayashiManufacturerService {
 		should match a recorded order in the XML file. If you find a match, you mark the
 		matching order as "paid" in the XML file and return true. Otherwise, return false.*/
 	public boolean receivePayment(String orderNum, float totalPrice){
-		//TODO - get orderNum and totalPrice from xml file
-		String xmlOrderNum = "temporaryNum";
-		float xmlTotalPrice = (float)10.00;
-		if (orderNum.compareTo(xmlOrderNum) == 0 || xmlTotalPrice == totalPrice)
-		{
-			//TODO - Write paid to XML File
-			return true;
-		}
+		loadPurchaseOrders();
+		
+		for(PurchaseOrder currentPurchaseOrder: purchaseOrders)
+			if (currentPurchaseOrder.getOrderNum().compareTo(orderNum) == 0)
+				if ((currentPurchaseOrder.getUnitPrice() * currentPurchaseOrder.getQuantity()) == totalPrice)
+				{
+					currentPurchaseOrder.setPaymentStatus("paid");
+					updatePurchaseOrders();
+					return true;
+				}
 		return false;
 	}
 		
@@ -103,15 +108,17 @@ public class KobayashiManufacturerService {
 	/*
 	 * This private method is used to load the Manufacturer product information from xml into objects.
 	 */
-	private void loadProducts(){
+	public ProductList loadProducts(){
 		JAXBContext context;
 		try {
 			context = JAXBContext.newInstance(ProductList.class);
 			Unmarshaller productListUnmarshaller = context.createUnmarshaller();
-			products = (ProductList)productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
+			System.out.println(productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH)));
+			//products = (ProductList)productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
+		return products;
 	}
 	
 	/*
@@ -121,8 +128,38 @@ public class KobayashiManufacturerService {
 		JAXBContext context;
 		try {
 			context = JAXBContext.newInstance(ProductList.class);
-			Marshaller productListUnmarshaller = context.createMarshaller();
-			productListUnmarshaller.marshal(products, new File(PRODUCTSXMLPATH));
+			Marshaller productListMarshaller = context.createMarshaller();
+			productListMarshaller.marshal(products, new File(PRODUCTSXMLPATH));
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/*
+	 * This private method is used to load the Manufacturer purchase order information from xml into objects.
+	 */
+	public PurchaseOrderList loadPurchaseOrders(){
+		JAXBContext context;
+		try {
+			context = JAXBContext.newInstance(PurchaseOrderList.class);
+			Unmarshaller purchaseOrderListUnmarshaller = context.createUnmarshaller();
+			System.out.println(purchaseOrderListUnmarshaller.unmarshal(new File(PURCHASEORDERSXMLPATH)));
+			//purchaseOrders = (PurchaseOrderList)productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+		return purchaseOrders;
+	}
+	
+	/*
+	 * This private method is used to save the Manufacturer purchase order information to xml.
+	 */
+	private void updatePurchaseOrders(){
+		JAXBContext context;
+		try {
+			context = JAXBContext.newInstance(PurchaseOrderList.class);
+			Marshaller purchaseOrderListMarshaller = context.createMarshaller();
+			purchaseOrderListMarshaller.marshal(products, new File(PURCHASEORDERSXMLPATH));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}

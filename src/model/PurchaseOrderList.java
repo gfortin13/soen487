@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "PurchaseOrderList")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PurchaseOrderList extends ArrayList<Item>{
+public class PurchaseOrderList extends ArrayList<PurchaseOrder>{
 	
 	@XmlElement(name = "PurchaseOrder")
 	private List<PurchaseOrder> purchaseOrderList;
