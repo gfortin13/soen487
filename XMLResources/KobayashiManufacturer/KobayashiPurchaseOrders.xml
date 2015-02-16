@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PurchaseOrders xmlns="KobayashiPurchaseOrders.xsd">
-	<PurchaseOrder>
-		<OrderNum>4da65d4a</OrderNum>
-		<CustomerRef>89qwe7q8ew</CustomerRef>
-		<Product>
-			<ManufacturerName>Kobayashi</ManufacturerName>
-			<ProductType>TV</ProductType>
-			<UnitPrice>999.99</UnitPrice>
-		</Product>
-		<Quantity>1</Quantity>
-		<UnitPrice>1299.99</UnitPrice>
-		<PaymentStatus>not paid</PaymentStatus>
-	</PurchaseOrder>
-	<PurchaseOrder>
-		<OrderNum>4da65d4a</OrderNum>
-		<CustomerRef>89qwe7q8ew</CustomerRef>
-		<Product>
-			<ManufacturerName>Kobayashi</ManufacturerName>
-			<ProductType>DVD Player</ProductType>
-			<UnitPrice>99.99</UnitPrice>
-		</Product>
-		<Quantity>1</Quantity>
-		<UnitPrice>149.99</UnitPrice>
-		<PaymentStatus>not paid</PaymentStatus>
-	</PurchaseOrder>
-	<PurchaseOrder>
-		<OrderNum>4da51sde</OrderNum>
-		<CustomerRef>89qwe72x3c</CustomerRef>
-		<Product>
-			<ManufacturerName>Kobayashi</ManufacturerName>
-			<ProductType>TV</ProductType>
-			<UnitPrice>999.99</UnitPrice>
-		</Product>
-		<Quantity>1</Quantity>
-		<UnitPrice>1299.99</UnitPrice>
-		<PaymentStatus>not paid</PaymentStatus>
-	</PurchaseOrder>
-</PurchaseOrders>
+<tns:PurchaseOrders xmlns:tns="http://www.example.org/KobayashiPurchaseOrders" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/KobayashiPurchaseOrders KobayashiPurchaseOrders.xsd ">
+  <tns:PurchaseOrder>
+    <tns:OrderNum>4da65d4a</tns:OrderNum>
+    <tns:CustomerRef>89qwe7q8ew</tns:CustomerRef>
+    <tns:Product>
+      <tns:ProductType>TV</tns:ProductType>
+      <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
+      <tns:UnitPrice>999.99</tns:UnitPrice>
+    </tns:Product>
+    <tns:Quantity>1</tns:Quantity>
+    <tns:UnitPrice>1299.99</tns:UnitPrice>
+    <tns:PaymentStatus>not paid</tns:PaymentStatus>
+  </tns:PurchaseOrder>
+  <tns:PurchaseOrder>
+    <tns:OrderNum>4da65d4a</tns:OrderNum>
+    <tns:CustomerRef>89qwe7q8ew</tns:CustomerRef>
+    <tns:Product>
+      <tns:ProductType>DVD Player</tns:ProductType>
+      <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
+      <tns:UnitPrice>99.99</tns:UnitPrice>
+    </tns:Product>
+    <tns:Quantity>1</tns:Quantity>
+    <tns:UnitPrice>149.99</tns:UnitPrice>
+    <tns:PaymentStatus>not paid</tns:PaymentStatus>
+  </tns:PurchaseOrder>
+  <tns:PurchaseOrder>
+    <tns:OrderNum>4da51sde</tns:OrderNum>
+    <tns:CustomerRef>89qwe72x3c</tns:CustomerRef>
+    <tns:Product>
+      <tns:ProductType>TV</tns:ProductType>
+      <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
+      <tns:UnitPrice>999.99</tns:UnitPrice>
+    </tns:Product>
+    <tns:Quantity>1</tns:Quantity>
+    <tns:UnitPrice>1299.99</tns:UnitPrice>
+    <tns:PaymentStatus>not paid</tns:PaymentStatus>
+  </tns:PurchaseOrder>
+</tns:PurchaseOrders>

@@ -1,57 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ItemList xmlns="WarehouseItemList.xsd">
-	<Item>
-		<ManufacturerName>Kobayashi</ManufacturerName>
-		<ProductType>DVD Player</ProductType>
-		<UnitPrice>129.99</UnitPrice>
-		<Quantity>9</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Kobayashi</ManufacturerName>
-		<ProductType>Video Camera</ProductType>
-		<UnitPrice>459.99</UnitPrice>
-		<Quantity>8</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Kobayashi</ManufacturerName>
-		<ProductType>TV</ProductType>
-		<UnitPrice>1299.99</UnitPrice>
-		<Quantity>4</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Reno</ManufacturerName>
-		<ProductType>DVD Player</ProductType>
-		<UnitPrice>169.99</UnitPrice>
-		<Quantity>3</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Reno</ManufacturerName>
-		<ProductType>TV</ProductType>
-		<Price>999.99</Price>
-		<Quantity>4</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Reno</ManufacturerName>
-		<ProductType>Video Camera</ProductType>
-		<Price>499.99</Price>
-		<Quantity>4</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Soomba</ManufacturerName>
-		<ProductType>DVD Player</ProductType>
-		<Price>139.99</Price>
-		<Quantity>12</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Soomba</ManufacturerName>
-		<ProductType>TV</ProductType>
-		<Price>1099.99</Price>
-		<Quantity>10</Quantity>
-	</Item>
-	<Item>
-		<ManufacturerName>Soomba</ManufacturerName>
-		<ProductType>Video Camera</ProductType>
-		<Price>489.99</Price>
-		<Quantity>10</Quantity>
-	</Item>
-</ItemList>
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:WarehouseItemList xmlns:tns="http://www.example.org/WarehouseItemList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/WarehouseItemList WarehouseItemList.xsd ">
+  <tns:Item>
+		<tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
+		<tns:ProductType>DVD Player</tns:ProductType>
+		<tns:UnitPrice>129.99</tns:UnitPrice>
+		<tns:Quantity>9</tns:Quantity>
+	</tns:Item>
+	<tns:Item>
+		<tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
+		<tns:ProductType>Video Camera</tns:ProductType>
+		<tns:UnitPrice>459.99</tns:UnitPrice>
+		<tns:Quantity>8</tns:Quantity>
+	</tns:Item>
+	<tns:Item>
+		<tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
+		<tns:ProductType>TV</tns:ProductType>
+		<tns:UnitPrice>1299.99</tns:UnitPrice>
+		<tns:Quantity>4</tns:Quantity>
+	</tns:Item>
+</tns:WarehouseItemList>
