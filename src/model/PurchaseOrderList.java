@@ -8,19 +8,26 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "PurchaseOrderList")
+@XmlRootElement(name = "PurchaseOrders")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PurchaseOrderList extends ArrayList<PurchaseOrder>{
 	
-	@XmlElement(name = "PurchaseOrder")
-	private List<PurchaseOrder> purchaseOrderList;
+	private List PurchaseOrderList;
 	
-	public PurchaseOrderList(){
-		purchaseOrderList = new ArrayList<PurchaseOrder>();
+	@XmlElement(name = "PurchaseOrder")
+	public void setPurchaseOrderList(List PurchaseOrderList){
+		this.PurchaseOrderList = PurchaseOrderList;
 	}
 	
+	
+	public PurchaseOrderList(){
+		PurchaseOrderList = new ArrayList<PurchaseOrder>();
+	}
+	
+	
+	
 	public boolean add(PurchaseOrder p){
-		purchaseOrderList.add(p);
+		PurchaseOrderList.add(p);
 		return true;
 	}
 }

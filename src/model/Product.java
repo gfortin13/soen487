@@ -8,18 +8,33 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "Product")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name="Product", propOrder={
+@XmlType(propOrder={
 		"ManufacturerName",
 		"ProductType",
 		"UnitPrice"
 })
 public class Product {
-	@XmlElement(name = "ManufacturerName")
+	
 	private String ManufacturerName;
-	@XmlElement(name = "ProductType")
+	
+	@XmlElement(name = "ManufacturerName")
+	public void setManufacturerName(String manufacturerName) {
+		this.ManufacturerName = manufacturerName;
+	}
+	
 	private String ProductType;
-	@XmlElement(name = "UnitPrice")
+	
+	@XmlElement(name = "ProductType")
+	public void setProductType(String productType) {
+		this.ProductType = productType;
+	}
+	
 	private float UnitPrice;
+	
+	@XmlElement(name = "UnitPrice")
+	public void setUnitPrice(float unitPrice) {
+		this.UnitPrice = unitPrice;
+	}
 	
 	public Product(String productType, String manufacturerName, float unitPrice){
 		this.ProductType = productType;
@@ -34,24 +49,12 @@ public class Product {
 		return ProductType;
 	}
 
-	public void setProductType(String productType) {
-		this.ProductType = productType;
-	}
-
 	public String getManufacturerName() {
 		return ManufacturerName;
-	}
-
-	public void setManufacturerName(String manufacturerName) {
-		this.ManufacturerName = manufacturerName;
 	}
 	
 	public float getUnitPrice() {
 		return UnitPrice;
-	}
-
-	public void setUnitPrice(float unitPrice) {
-		this.UnitPrice = unitPrice;
 	}
 	
 }

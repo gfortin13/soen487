@@ -5,14 +5,34 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Item")
 public class Item {
-	@XmlElement(name = "ManufacturerName")
+	
 	private String manufacturerName;
-	@XmlElement(name = "ProductType")
+	
+	@XmlElement(name = "ManufacturerName")
+	public void setManufacturerName(String manufacturerName) {
+		this.manufacturerName = manufacturerName;
+	}
+	
 	private String productType;
-	@XmlElement(name = "UnitPrice")
+	
+	@XmlElement(name = "ProductType")
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+	
 	private float unitPrice;
-	@XmlElement(name = "Quantity")
+	
+	@XmlElement(name = "UnitPrice")
+	public void setUnitPrice(float unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+	
 	private int quantity;
+	
+	@XmlElement(name = "Quantity")
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	
 	public Item(String manufacturerName, String productType, float unitPrice, int quantity){
 		this.manufacturerName = manufacturerName;
@@ -29,32 +49,16 @@ public class Item {
 		return manufacturerName;
 	}
 
-	public void setManufacturerName(String manufacturerName) {
-		this.manufacturerName = manufacturerName;
-	}
-
 	public String getProductType() {
 		return productType;
-	}
-
-	public void setProductType(String productType) {
-		this.productType = productType;
 	}
 
 	public float getUnitPrice() {
 		return unitPrice;
 	}
 
-	public void setUnitPrice(float unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-
 	public int getQuantity() {
 		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
 	}
 	
 	public boolean equals (Object o){

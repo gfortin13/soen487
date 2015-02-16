@@ -11,15 +11,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "ItemList")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ItemList extends ArrayList<Item>{
+	
+	private List ItemList;
 	@XmlElement(name = "Item")
-	private List<Item> itemList;
+	public void setItemList(List ItemList){
+		this.ItemList = ItemList;
+	}
 	
 	public ItemList(){
-		itemList = new ArrayList<Item>();
+		ItemList = new ArrayList<Item>();
 	}
 	
 	public boolean add(Item i){
-		itemList.add(i);
+		ItemList.add(i);
 		return true;
 	}
 }

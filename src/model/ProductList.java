@@ -12,10 +12,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ProductList extends ArrayList<Product>{
 
-	private List<Product> ProductList;
+	private List ProductList;
 	
 	public ProductList(){
 		ProductList = new ArrayList<Product>();
+	}
+	
+	@XmlElement(name= "Product" )
+	public void setProductList(List ProductList){
+		this.ProductList = ProductList;
 	}
 	
 	public boolean add(Product p){

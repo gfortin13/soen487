@@ -8,73 +8,73 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "PurchaseOrder")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PurchaseOrder {
+	
+	private String OrderNum;
 	@XmlElement(name = "OrderNum")
-	private String orderNum;
+	public void setOrderNum(String OrderNum) {
+		this.OrderNum = OrderNum;
+	}
+	
+	private String CustomerRef;
 	@XmlElement(name = "CustomerRef")
-	private String customerRef;
+	public void setCustomerRef(String CustomerRef) {
+		this.CustomerRef = CustomerRef;
+	}
+	
+	private Product Product;
 	@XmlElement(name = "Product")
-	private Product product;
+	public void setProduct(Product Product) {
+		this.Product = Product;
+	}
+	
+	private int Quantity;
 	@XmlElement(name = "Quantity")
-	private int quantity;
+	public void setQuantity(int Quantity) {
+		this.Quantity = Quantity;
+	}
+	
+	private float UnitPrice;
 	@XmlElement(name = "UnitPrice")
-	private float unitPrice;
+	public void setUnitPrice(float UnitPrice) {
+		this.UnitPrice = UnitPrice;
+	}
+	
+	private String PaymentStatus;
 	@XmlElement(name = "PaymentStatus")
-	private String paymentStatus;
+	public void setPaymentStatus(String PaymentStatus) {
+		this.PaymentStatus = PaymentStatus;
+	}
 	
 	public PurchaseOrder(String orderNum, String customerRef, Product product, int quantity, float unitPrice, String paymentStatus){
-		this.orderNum = orderNum;
-		this.customerRef = customerRef;
-		this.product = product;
-		this.quantity = quantity;
-		this.unitPrice = unitPrice;
-		this.paymentStatus = paymentStatus;
+		this.OrderNum = orderNum;
+		this.CustomerRef = customerRef;
+		this.Product = product;
+		this.Quantity = quantity;
+		this.UnitPrice = unitPrice;
+		this.PaymentStatus = paymentStatus;
 	}
 
 	public String getOrderNum() {
-		return orderNum;
-	}
-
-	public void setOrderNum(String orderNum) {
-		this.orderNum = orderNum;
+		return OrderNum;
 	}
 
 	public String getCustomerRef() {
-		return customerRef;
-	}
-
-	public void setCustomerRef(String customerRef) {
-		this.customerRef = customerRef;
+		return CustomerRef;
 	}
 
 	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
+		return Product;
 	}
 
 	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+		return Quantity;
 	}
 
 	public float getUnitPrice() {
-		return unitPrice;
-	}
-
-	public void setUnitPrice(float unitPrice) {
-		this.unitPrice = unitPrice;
+		return UnitPrice;
 	}
 	
 	public String getPaymentStatus() {
-		return paymentStatus;
-	}
-
-	public void setPaymentStatus(String paymentStatus) {
-		this.paymentStatus = paymentStatus;
+		return PaymentStatus;
 	}
 }

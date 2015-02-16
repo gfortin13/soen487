@@ -31,7 +31,7 @@ public class KobayashiManufacturerService {
 		if (!products.contains(aPO.getProduct()))
 			return false;
 		
-		//If the item exists in the xml, retrieve its price within the cml file
+		//If the item exists in the xml, retrieve its price within the xml file
 		float xmlPrice = products.get(products.indexOf(aPO.getProduct())).getUnitPrice();
 		if (aPO.getUnitPrice() >= xmlPrice)
 		{
@@ -73,7 +73,6 @@ public class KobayashiManufacturerService {
 			if (currentProduct.getProductType().compareTo(aProdName) == 0)
 				return currentProduct;
 		}
-		
 		return null;
 	}
 		
@@ -81,6 +80,7 @@ public class KobayashiManufacturerService {
 		should match a recorded order in the XML file. If you find a match, you mark the
 		matching order as "paid" in the XML file and return true. Otherwise, return false.*/
 	public boolean receivePayment(String orderNum, float totalPrice){
+		
 		loadPurchaseOrders();
 		
 		for(PurchaseOrder currentPurchaseOrder: purchaseOrders)
@@ -91,6 +91,7 @@ public class KobayashiManufacturerService {
 					updatePurchaseOrders();
 					return true;
 				}
+		
 		return false;
 	}
 		

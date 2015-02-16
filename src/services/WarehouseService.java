@@ -83,15 +83,17 @@ public class WarehouseService {
 		/*
 		 * This private method is used to load the Warehouse product information from xml into objects.
 		 */
-		private void loadWarehouseItems(){
+		public ItemList loadWarehouseItems(){
 			JAXBContext context;
 			try {
-				context = JAXBContext.newInstance(ProductList.class);
+				context = JAXBContext.newInstance(model.ItemList.class);
 				Unmarshaller itemListUnmarshaller = context.createUnmarshaller();
 				warehouseItems = (ItemList)itemListUnmarshaller.unmarshal(new File(WAREHOUSEITEMSXMLPATH));
 			} catch (JAXBException e) {
 				e.printStackTrace();
 			}
+			
+			return warehouseItems;
 		}
 		
 		/*
@@ -100,7 +102,7 @@ public class WarehouseService {
 		private void updateWarehouseItems(){
 			JAXBContext context;
 			try {
-				context = JAXBContext.newInstance(ProductList.class);
+				context = JAXBContext.newInstance(model.ItemList.class);
 				Marshaller itemListMarshaller = context.createMarshaller();
 				itemListMarshaller.marshal(warehouseItems, new File(WAREHOUSEITEMSXMLPATH));
 			} catch (JAXBException e) {
