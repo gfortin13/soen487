@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "ProductList")
+@XmlRootElement(name = "ProductList", namespace = "http://www.example.org/soen487")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ProductList extends ArrayList<Product>{
 

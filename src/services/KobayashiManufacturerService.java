@@ -114,8 +114,7 @@ public class KobayashiManufacturerService {
 		try {
 			context = JAXBContext.newInstance(ProductList.class);
 			Unmarshaller productListUnmarshaller = context.createUnmarshaller();
-			System.out.println(productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH)));
-			//products = (ProductList)productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
+			products = (ProductList)productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
@@ -144,8 +143,7 @@ public class KobayashiManufacturerService {
 		try {
 			context = JAXBContext.newInstance(PurchaseOrderList.class);
 			Unmarshaller purchaseOrderListUnmarshaller = context.createUnmarshaller();
-			System.out.println(purchaseOrderListUnmarshaller.unmarshal(new File(PURCHASEORDERSXMLPATH)));
-			//purchaseOrders = (PurchaseOrderList)productListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
+			purchaseOrders = (PurchaseOrderList)purchaseOrderListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}

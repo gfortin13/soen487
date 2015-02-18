@@ -3,7 +3,7 @@ package model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "Item")
+@XmlRootElement(name = "Item", namespace="http://www.example.org/soen487")
 public class Item {
 	
 	private String manufacturerName;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:WarehouseItemList xmlns:tns="http://www.example.org/WarehouseItemList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/WarehouseItemList WarehouseItemList.xsd ">
+<tns:WarehouseItemList xmlns:tns="http://www.example.org/soen487" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/soen487 WarehouseItemList.xsd ">
   <tns:Item>
 		<tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
 		<tns:ProductType>DVD Player</tns:ProductType>

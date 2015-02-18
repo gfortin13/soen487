@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/WarehouseItemList" xmlns:tns="http://www.example.org/WarehouseItemList" elementFormDefault="qualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/soen487" xmlns:tns="http://www.example.org/soen487" elementFormDefault="qualified">
 <xsd:element name="WarehouseItemList">
 	<xsd:complexType>
 		<xsd:sequence>

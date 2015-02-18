@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "Product")
+@XmlRootElement(name = "Product", namespace = "http://www.example.org/soen487")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder={
 		"ManufacturerName",
