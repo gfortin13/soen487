@@ -13,9 +13,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ItemList extends ArrayList<Item>{
 	
 	private List ItemList;
-	@XmlElement(name = "Item")
+	@XmlElement(name = "Item", type = Item.class)
 	public void setItemList(List ItemList){
 		this.ItemList = ItemList;
+	}
+	
+	public List<Item> getItemList(){
+		return ItemList;
 	}
 	
 	public ItemList(){

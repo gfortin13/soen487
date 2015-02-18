@@ -22,12 +22,9 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="read" qname="operNS:read" xmlns:operNS="http://XMLUtils.util" soapAction="" >
         <parameter qname="pns:url" xmlns:pns="http://XMLUtils.util" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:type" xmlns:pns="http://XMLUtils.util" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="readRSS" qname="operNS:readRSS" xmlns:operNS="http://XMLUtils.util" soapAction="" >
-        <parameter qname="pns:url" xmlns:pns="http://XMLUtils.util" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:rootTags" xmlns:pns="http://XMLUtils.util" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <parameter name="allowedMethods" value="read readRSS"/>
+      <parameter name="allowedMethods" value="read"/>
 
   </service>
 </deployment>

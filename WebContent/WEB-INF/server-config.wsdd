@@ -35,12 +35,9 @@
  <ns1:service name="XMLReader" provider="java:RPC" style="wrapped" use="literal">
   <ns2:operation name="read" qname="ns1:read" soapAction="" xmlns:ns1="http://XMLUtils.util" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
    <ns2:parameter qname="ns1:url" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns2:parameter qname="ns1:type" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns2:operation>
-  <ns1:operation name="readRSS" qname="ns2:readRSS" soapAction="" xmlns:ns2="http://XMLUtils.util">
-   <ns1:parameter qname="ns2:url" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-   <ns1:parameter qname="ns2:rootTags" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="read readRSS"/>
+  <ns1:parameter name="allowedMethods" value="read"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="XMLReader"/>
   <ns1:parameter name="className" value="util.XMLUtils.XMLReader"/>

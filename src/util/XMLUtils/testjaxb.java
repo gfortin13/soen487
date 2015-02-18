@@ -11,6 +11,7 @@ public class testjaxb {
         
     	KobayashiManufacturerService manService = new KobayashiManufacturerService();
         ProductList manProducts = manService.loadProducts();
+        
         for (Product currentProduct : manProducts)
         {
         	System.out.println(currentProduct.getManufacturerName());

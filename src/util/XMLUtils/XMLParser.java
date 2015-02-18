@@ -15,6 +15,9 @@ public class XMLParser {
 		  //parse("XMLResources/marfcat-in.xml");
 		  //parse("XMLResources/marfcat-out.xml");
 		  //parse("XMLResources/faultSample.wsdl");
+		  //parse(XMLRetriever.getDoc("XMLResources/marfcat-in.xml"));
+		  //XMLParser.parse(XMLRetriever.getDoc("XMLResources/marfcat-in.xml"));
+		  XMLParser.parse(XMLRetriever.requestXML("http://www.ledevoir.com/rss/ledevoir.xml", ""), "title");
 		  
 	  }
 	  

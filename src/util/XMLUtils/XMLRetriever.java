@@ -20,6 +20,8 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+
 public class XMLRetriever {
 	public static void main (String[] args){
 		//XMLRetriever.requestXML("http://www.ledevoir.com/rss/ledevoir.xml", "XMLResources/rssNews.xml");
@@ -79,6 +81,21 @@ public class XMLRetriever {
 			e.printStackTrace();
 		}*/
 		return null;
+	}
+	
+	public static Document getDoc(String fileName){
+		DOMParser parser = new DOMParser();
+	    try {
+			parser.parse(fileName);
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    Document doc = parser.getDocument();
+	    return doc;
 	}
 	
 }
