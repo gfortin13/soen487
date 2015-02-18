@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:PurchaseOrders xmlns:tns="http://www.example.org/KobayashiPurchaseOrders" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/KobayashiPurchaseOrders KobayashiPurchaseOrders.xsd ">
+<tns:PurchaseOrders xmlns:tns="http://www.example.org/soen487" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/soen487 KobayashiPurchaseOrders.xsd ">
   <tns:PurchaseOrder>
     <tns:OrderNum>4da65d4a</tns:OrderNum>
     <tns:CustomerRef>89qwe7q8ew</tns:CustomerRef>
