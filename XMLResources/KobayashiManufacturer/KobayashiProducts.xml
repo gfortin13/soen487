@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<tns:ProductList xmlns:tns="http://www.example.org/soen487" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/soen487 KobayashiProducts.xsd ">
-  <tns:Product>
-    <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
-    <tns:ProductType>TV</tns:ProductType>
-    <tns:UnitPrice>999.99</tns:UnitPrice>
-  </tns:Product>
-  <tns:Product>
-    <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
-    <tns:ProductType>DVD Player</tns:ProductType>
-    <tns:UnitPrice>99.99</tns:UnitPrice>
-  </tns:Product>
-  <tns:Product>
-    <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
-    <tns:ProductType>Video Camera</tns:ProductType>
-    <tns:UnitPrice>399.99</tns:UnitPrice>
-  </tns:Product>
-</tns:ProductList>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<products xmlns="http://www.example.org/soen487">
+    <product>
+        <manufacturerName>TV</manufacturerName>
+        <productType>Kobayashi</productType>
+        <unitPrice>999.99</unitPrice>
+    </product>
+    <product>
+        <manufacturerName>DVD Player</manufacturerName>
+        <productType>Kobayashi</productType>
+        <unitPrice>99.99</unitPrice>
+    </product>
+    <product>
+        <manufacturerName>Video Camera</manufacturerName>
+        <productType>Kobayashi</productType>
+        <unitPrice>399.99</unitPrice>
+    </product>
+</products>

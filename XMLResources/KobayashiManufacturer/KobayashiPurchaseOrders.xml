@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<tns:PurchaseOrders xmlns:tns="http://www.example.org/soen487" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/soen487 KobayashiPurchaseOrders.xsd ">
-  <tns:PurchaseOrder>
-    <tns:OrderNum>4da65d4a</tns:OrderNum>
-    <tns:CustomerRef>89qwe7q8ew</tns:CustomerRef>
-    <tns:Product>
-      <tns:ProductType>TV</tns:ProductType>
-      <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
-      <tns:UnitPrice>999.99</tns:UnitPrice>
-    </tns:Product>
-    <tns:Quantity>1</tns:Quantity>
-    <tns:UnitPrice>1299.99</tns:UnitPrice>
-    <tns:PaymentStatus>not paid</tns:PaymentStatus>
-  </tns:PurchaseOrder>
-  <tns:PurchaseOrder>
-    <tns:OrderNum>4da65d4a</tns:OrderNum>
-    <tns:CustomerRef>89qwe7q8ew</tns:CustomerRef>
-    <tns:Product>
-      <tns:ProductType>DVD Player</tns:ProductType>
-      <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
-      <tns:UnitPrice>99.99</tns:UnitPrice>
-    </tns:Product>
-    <tns:Quantity>1</tns:Quantity>
-    <tns:UnitPrice>149.99</tns:UnitPrice>
-    <tns:PaymentStatus>not paid</tns:PaymentStatus>
-  </tns:PurchaseOrder>
-  <tns:PurchaseOrder>
-    <tns:OrderNum>4da51sde</tns:OrderNum>
-    <tns:CustomerRef>89qwe72x3c</tns:CustomerRef>
-    <tns:Product>
-      <tns:ProductType>TV</tns:ProductType>
-      <tns:ManufacturerName>Kobayashi</tns:ManufacturerName>
-      <tns:UnitPrice>999.99</tns:UnitPrice>
-    </tns:Product>
-    <tns:Quantity>1</tns:Quantity>
-    <tns:UnitPrice>1299.99</tns:UnitPrice>
-    <tns:PaymentStatus>not paid</tns:PaymentStatus>
-  </tns:PurchaseOrder>
-</tns:PurchaseOrders>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrders xmlns="http://www.example.org/soen487">
+    <purchaseOrder>
+        <orderNum>4da65d4a</orderNum>
+        <customerRef>89qwe7q8ew</customerRef>
+        <product>
+            <manufacturerName>TV</manufacturerName>
+            <productType>Kobayashi</productType>
+            <unitPrice>999.99</unitPrice>
+        </product>
+        <quantity>1</quantity>
+        <unitPrice>1299.99</unitPrice>
+        <paymentStatus>not paid</paymentStatus>
+    </purchaseOrder>
+    <purchaseOrder>
+        <orderNum>4da65d4a</orderNum>
+        <customerRef>89qwe7q8ew</customerRef>
+        <product>
+            <manufacturerName>DVD Player</manufacturerName>
+            <productType>Kobayashi</productType>
+            <unitPrice>99.99</unitPrice>
+        </product>
+        <quantity>1</quantity>
+        <unitPrice>149.99</unitPrice>
+        <paymentStatus>not paid</paymentStatus>
+    </purchaseOrder>
+    <purchaseOrder>
+        <orderNum>4da51sde</orderNum>
+        <customerRef>89qwe72x3c</customerRef>
+        <product>
+            <manufacturerName>TV</manufacturerName>
+            <productType>Kobayashi</productType>
+            <unitPrice>999.99</unitPrice>
+        </product>
+        <quantity>1</quantity>
+        <unitPrice>1299.99</unitPrice>
+        <paymentStatus>not paid</paymentStatus>
+    </purchaseOrder>
+</purchaseOrders>

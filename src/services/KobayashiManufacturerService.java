@@ -28,11 +28,11 @@ public class KobayashiManufacturerService {
 		
 		//Load the products, if the item does not occur in the xml return false
 		loadProducts();
-		if (!products.contains(aPO.getProduct()))
+		if (!products.getProductList().contains(aPO.getProduct()))
 			return false;
 		
 		//If the item exists in the xml, retrieve its price within the xml file
-		float xmlPrice = products.get(products.indexOf(aPO.getProduct())).getUnitPrice();
+		float xmlPrice = products.getProductList().get(products.getProductList().indexOf(aPO.getProduct())).getUnitPrice();
 		if (aPO.getUnitPrice() >= xmlPrice)
 		{
 			//If the xml price is less than or equal to the purchase order price, retrieve item quantity
@@ -68,7 +68,7 @@ public class KobayashiManufacturerService {
 			return null;
 		
 		loadProducts();
-		for (Product currentProduct : products)
+		for (Product currentProduct : products.getProductList())
 		{
 			if (currentProduct.getProductType().compareTo(aProdName) == 0)
 				return currentProduct;
@@ -83,7 +83,7 @@ public class KobayashiManufacturerService {
 		
 		loadPurchaseOrders();
 		
-		for(PurchaseOrder currentPurchaseOrder: purchaseOrders)
+		for(PurchaseOrder currentPurchaseOrder: purchaseOrders.getPurchaseOrderList())
 			if (currentPurchaseOrder.getOrderNum().compareTo(orderNum) == 0)
 				if ((currentPurchaseOrder.getUnitPrice() * currentPurchaseOrder.getQuantity()) == totalPrice)
 				{

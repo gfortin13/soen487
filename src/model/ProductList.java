@@ -8,23 +8,27 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "ProductList", namespace = "http://www.example.org/soen487")
+@XmlRootElement(name = "products")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ProductList extends ArrayList<Product>{
-
-	private List ProductList;
+public class ProductList {
+	
+	@XmlElement(name= "product" )
+	private List<Product> productList;
 	
 	public ProductList(){
-		ProductList = new ArrayList<Product>();
+		productList = new ArrayList<Product>();
 	}
 	
-	@XmlElement(name= "Product" )
-	public void setProductList(List ProductList){
-		this.ProductList = ProductList;
+	public void setProductList(List<Product> ProductList){
+		this.productList = ProductList;
 	}
 	
+	public List<Product> getProductList() {
+		return productList;
+	}
+
 	public boolean add(Product p){
-		ProductList.add(p);
+		productList.add(p);
 		return true;
 	}
 }

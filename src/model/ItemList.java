@@ -8,13 +8,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "ItemList", namespace="http://www.example.org/soen487")
+@XmlRootElement(name = "items")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ItemList extends ArrayList<Item>{
+public class ItemList{
 	
-	private List ItemList;
-	@XmlElement(name = "Item", type = Item.class)
-	public void setItemList(List ItemList){
+	private List<Item> ItemList;
+	
+	@XmlElement(name = "item")
+	public void setItemList(List<Item> ItemList){
 		this.ItemList = ItemList;
 	}
 	
@@ -27,7 +28,6 @@ public class ItemList extends ArrayList<Item>{
 	}
 	
 	public boolean add(Item i){
-		ItemList.add(i);
-		return true;
+		return ItemList.add(i);
 	}
 }

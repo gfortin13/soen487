@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/soen487" xmlns:tns="http://www.example.org/soen487" elementFormDefault="qualified">
-<xsd:element name="PurchaseOrders">
+<xsd:element name="purchaseOrders">
 	<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element name="PurchaseOrder" maxOccurs="unbounded">
+			<xsd:element name="purchaseOrder" maxOccurs="unbounded">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="OrderNum" type="xsd:string" />
-						<xsd:element name="CustomerRef" type="xsd:string" />
-						<xsd:element name="Product">
+						<xsd:element name="orderNum" type="xsd:string" />
+						<xsd:element name="customerRef" type="xsd:string" />
+						<xsd:element name="product">
 							<xsd:complexType>
 								<xsd:sequence>
-									<xsd:element name="ProductType" type="xsd:string" />
-									<xsd:element name="ManufacturerName" type="xsd:string" />
-									<xsd:element name="UnitPrice" type="xsd:decimal" />	
+									<xsd:element name="productType" type="xsd:string" />
+									<xsd:element name="manufacturerName" type="xsd:string" />
+									<xsd:element name="unitPrice" type="xsd:decimal" />	
 								</xsd:sequence>
 							</xsd:complexType>
 						</xsd:element>
-						<xsd:element name="Quantity" type="xsd:integer" />
-						<xsd:element name="UnitPrice" type="xsd:decimal" />	
-						<xsd:element name="PaymentStatus" type="xsd:string" />	
+						<xsd:element name="quantity" type="xsd:integer" />
+						<xsd:element name="unitPrice" type="xsd:decimal" />	
+						<xsd:element name="paymentStatus" type="xsd:string" />	
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>

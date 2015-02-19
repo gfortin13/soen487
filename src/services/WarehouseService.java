@@ -29,15 +29,15 @@ public class WarehouseService {
 			ItemShippingStatusList statusList = new ItemShippingStatusList();
 			loadWarehouseItems();
 			
-			for (Item currentItem : itemList)
+			for (Item currentItem : itemList.getItemList())
 			{
 				//Create an item stub which will simply hold manufacturerName and productType, which
 				//are the only pieces of information needed to compare equivalence
 				Item itemInfo = new Item(currentItem.getManufacturerName(), currentItem.getProductType(), 0, 0);
-				if (warehouseItems.contains(itemInfo))
+				if (warehouseItems.getItemList().contains(itemInfo))
 				{
 					//if the item ordered exists within the xml file, save the full item info to a variable
-					itemInfo = warehouseItems.get(warehouseItems.indexOf(itemInfo));
+					itemInfo = warehouseItems.getItemList().get(warehouseItems.getItemList().indexOf(itemInfo));
 					
 					if (itemInfo.getQuantity() >= currentItem.getQuantity())
 					{
@@ -70,7 +70,7 @@ public class WarehouseService {
 		Manufacturer. You can decide how many to order.*/
 		private void replenish(){
 			
-			for (Item currentItem : warehouseItems)
+			for (Item currentItem : warehouseItems.getItemList())
 			{
 				if (currentItem.getQuantity() < 10)
 					currentItem.setQuantity(currentItem.getQuantity() + 10);

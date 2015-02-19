@@ -2,7 +2,7 @@ package model;
 
 import java.util.HashMap;
 
-public class ItemShippingStatusList extends HashMap<Item, String>{
+public class ItemShippingStatusList{
 
 	HashMap<Item, String> statusList;
 	

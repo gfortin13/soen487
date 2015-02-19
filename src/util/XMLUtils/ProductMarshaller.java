@@ -14,21 +14,26 @@ import model.ItemList;
 import model.Product;
 import model.ProductList;
 
-public class test2jaxb {
+public class ProductMarshaller {
     public static void main(String[] args) throws JAXBException {
-        JAXBContext jc = JAXBContext.newInstance(ItemList.class);
+        JAXBContext jc = JAXBContext.newInstance(ProductList.class);
 
         /*Unmarshaller unmarshaller = jc.createUnmarshaller();
         Cars cars = (Cars) unmarshaller.unmarshal(new File("cars.xml"));*/
         
-        ItemList items = new ItemList();
+        ProductList products = new ProductList();
         
-        Item item = new Item("LG", "TV", 60, 5);
+        Product prod = new Product("Kobayashi", "TV", 999.99f);
+        Product prod2 = new Product("Kobayashi", "DVD Player", 99.99f);
+        Product prod3 = new Product("Kobayashi", "Video Camera", 399.99f);
         
-        items.add(item);
+        products.add(prod);
+        products.add(prod2);
+        products.add(prod3);
 
         Marshaller marshaller = jc.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        marshaller.marshal(items, System.out);
+        marshaller.marshal(products, System.out);
+        marshaller.marshal(products, new File("XMLResources/KobayashiManufacturer/KobayashiProducts.xml"));
     }
 }
