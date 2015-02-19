@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/soen487" xmlns:tns="http://www.example.org/soen487" elementFormDefault="qualified">
-<xsd:element name="WarehouseItemList">
+<xsd:element name="items">
 	<xsd:complexType>
 		<xsd:sequence>
-			<xsd:element name="Item" maxOccurs="unbounded">
+			<xsd:element name="item" maxOccurs="unbounded">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="ManufacturerName" type="xsd:string" />
-						<xsd:element name="ProductType" type="xsd:string" />
-						<xsd:element name="UnitPrice" type="xsd:decimal" />
-						<xsd:element name="Quantity" type="xsd:integer" />
+						<xsd:element name="manufacturerName" type="xsd:string" />
+						<xsd:element name="productType" type="xsd:string" />
+						<xsd:element name="unitPrice" type="xsd:decimal" />
+						<xsd:element name="quantity" type="xsd:integer" />
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>

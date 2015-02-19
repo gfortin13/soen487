@@ -12,21 +12,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ItemList{
 	
-	private List<Item> ItemList;
-	
 	@XmlElement(name = "item")
-	public void setItemList(List<Item> ItemList){
-		this.ItemList = ItemList;
-	}
-	
-	public List<Item> getItemList(){
-		return ItemList;
-	}
+	private List<Item> ItemList;
 	
 	public ItemList(){
 		ItemList = new ArrayList<Item>();
 	}
 	
+	public List<Item> getItemList() {
+		return ItemList;
+	}
+
+	public void setItemList(List<Item> itemList) {
+		ItemList = itemList;
+	}
+
 	public boolean add(Item i){
 		return ItemList.add(i);
 	}

@@ -46,7 +46,13 @@ public class Product {
 	public void setUnitPrice(float unitPrice) {
 		this.unitPrice = unitPrice;
 	}
+	
+	public boolean equals (Object o){
+		if(o instanceof Product){
+			Product toCompare = (Product) o;
+		    return (this.manufacturerName.equals(toCompare.manufacturerName) && this.productType.equals(toCompare.productType));
+		  }
+		  return false;
+	}
 
-	
-	
 }

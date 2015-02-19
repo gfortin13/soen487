@@ -1,0 +1,52 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from KobayashiManufacturerServiceService WSDL service -->
+
+  <service name="KobayashiManufacturerService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services"/>
+      <parameter name="wsdlServiceElement" value="KobayashiManufacturerServiceService"/>
+      <parameter name="schemaQualified" value="http://model,http://services"/>
+      <parameter name="wsdlServicePort" value="KobayashiManufacturerService"/>
+      <parameter name="className" value="services.KobayashiManufacturerServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="KobayashiManufacturerService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getProductInfo" qname="operNS:getProductInfo" xmlns:operNS="http://services" returnQName="retNS:getProductInfoReturn" xmlns:retNS="http://services" returnType="rtns:Product" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:aProdName" xmlns:pns="http://services" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="receivePayment" qname="operNS:receivePayment" xmlns:operNS="http://services" returnQName="retNS:receivePaymentReturn" xmlns:retNS="http://services" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:orderNum" xmlns:pns="http://services" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:totalPrice" xmlns:pns="http://services" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="processPurchaseOrder" qname="operNS:processPurchaseOrder" xmlns:operNS="http://services" returnQName="retNS:processPurchaseOrderReturn" xmlns:retNS="http://services" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:aPO" xmlns:pns="http://services" type="tns:PurchaseOrder" xmlns:tns="http://model"/>
+      </operation>
+      <parameter name="allowedMethods" value="receivePayment processPurchaseOrder getProductInfo"/>
+
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:Product"
+        type="java:model.Product"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:PurchaseOrder"
+        type="java:model.PurchaseOrder"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

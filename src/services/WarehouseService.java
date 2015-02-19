@@ -15,7 +15,8 @@ import model.ProductList;
 
 public class WarehouseService {
 
-	private final String WAREHOUSEITEMSXMLPATH = "XMLResources/Warehouse/WarehouseItemList.xml";
+	// IMPORTANT: WRITE RELATIVE PATH ON OWN MACHINE
+	private final String WAREHOUSEITEMSXMLPATH = "D:/Documents/Guillaume/Eclipse projects/soen487/XMLResources/Warehouse/WarehouseItemList.xml";
 	private ItemList warehouseItems;
 	
 		/*For each item in the itemList, check the inventory. Ship out the items that are available
@@ -83,10 +84,10 @@ public class WarehouseService {
 		/*
 		 * This private method is used to load the Warehouse product information from xml into objects.
 		 */
-		public ItemList loadWarehouseItems(){
+		private ItemList loadWarehouseItems(){
 			JAXBContext context;
 			try {
-				context = JAXBContext.newInstance(model.ItemList.class);
+				context = JAXBContext.newInstance(ItemList.class);
 				Unmarshaller itemListUnmarshaller = context.createUnmarshaller();
 				warehouseItems = (ItemList)itemListUnmarshaller.unmarshal(new File(WAREHOUSEITEMSXMLPATH));
 			} catch (JAXBException e) {
@@ -102,8 +103,9 @@ public class WarehouseService {
 		private void updateWarehouseItems(){
 			JAXBContext context;
 			try {
-				context = JAXBContext.newInstance(model.ItemList.class);
+				context = JAXBContext.newInstance(ItemList.class);
 				Marshaller itemListMarshaller = context.createMarshaller();
+				itemListMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 				itemListMarshaller.marshal(warehouseItems, new File(WAREHOUSEITEMSXMLPATH));
 			} catch (JAXBException e) {
 				e.printStackTrace();

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services" xmlns:intf="http://services" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://model"/>
+   <element name="shipGoods">
+    <complexType>
+     <sequence>
+      <element name="itemList" type="tns1:ItemList"/>
+      <element name="info" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="shipGoodsResponse">
+    <complexType>
+     <sequence>
+      <element name="shipGoodsReturn" type="tns1:ItemShippingStatusList"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services"/>
+   <import namespace="http://model"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="ItemList">
+    <sequence>
+     <element name="itemList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="ItemShippingStatusList">
+    <sequence/>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="shipGoodsRequest">
+
+      <wsdl:part element="impl:shipGoods" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="shipGoodsResponse">
+
+      <wsdl:part element="impl:shipGoodsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WarehouseService">
+
+      <wsdl:operation name="shipGoods">
+
+         <wsdl:input message="impl:shipGoodsRequest" name="shipGoodsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:shipGoodsResponse" name="shipGoodsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WarehouseServiceSoapBinding" type="impl:WarehouseService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="shipGoods">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="shipGoodsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="shipGoodsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WarehouseServiceService">
+
+      <wsdl:port binding="impl:WarehouseServiceSoapBinding" name="WarehouseService">
+
+         <wsdlsoap:address location="http://localhost:8080/soen487/services/WarehouseService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

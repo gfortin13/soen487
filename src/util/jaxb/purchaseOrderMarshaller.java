@@ -1,4 +1,4 @@
-package util.XMLUtils;
+package util.jaxb;
 
 import java.io.File;
 
@@ -20,9 +20,9 @@ public class purchaseOrderMarshaller {
         
         PurchaseOrderList pol = new PurchaseOrderList();
         
-        Product prod = new Product("Kobayashi", "TV", 999.99f);
-        Product prod2 = new Product("Kobayashi", "DVD Player", 99.99f);
-        Product prod3 = new Product("Kobayashi", "Video Camera", 399.99f);
+        Product prod = new Product("TV", "Kobayashi", 999.99f);
+        Product prod2 = new Product("DVD Player", "Kobayashi", 99.99f);
+        Product prod3 = new Product("Video Camera", "Kobayashi", 399.99f);
         
         PurchaseOrder po1 = new PurchaseOrder("4da65d4a", "89qwe7q8ew", prod, 1, 1299.99f, "not paid");
         PurchaseOrder po2 = new PurchaseOrder("4da65d4a", "89qwe7q8ew", prod2, 1, 149.99f, "not paid");

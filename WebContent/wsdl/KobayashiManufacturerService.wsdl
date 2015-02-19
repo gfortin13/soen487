@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services" xmlns:intf="http://services" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="getProductInfo">
+    <complexType>
+     <sequence>
+      <element name="aProdName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getProductInfoResponse">
+    <complexType>
+     <sequence>
+      <element name="getProductInfoReturn" type="tns1:Product"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="receivePayment">
+    <complexType>
+     <sequence>
+      <element name="orderNum" type="xsd:string"/>
+      <element name="totalPrice" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="receivePaymentResponse">
+    <complexType>
+     <sequence>
+      <element name="receivePaymentReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="processPurchaseOrder">
+    <complexType>
+     <sequence>
+      <element name="aPO" type="tns1:PurchaseOrder"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="processPurchaseOrderResponse">
+    <complexType>
+     <sequence>
+      <element name="processPurchaseOrderReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Product">
+    <sequence>
+     <element name="manufacturerName" nillable="true" type="xsd:string"/>
+     <element name="productType" nillable="true" type="xsd:string"/>
+     <element name="unitPrice" type="xsd:float"/>
+    </sequence>
+   </complexType>
+   <complexType name="PurchaseOrder">
+    <sequence>
+     <element name="customerRef" nillable="true" type="xsd:string"/>
+     <element name="orderNum" nillable="true" type="xsd:string"/>
+     <element name="paymentStatus" nillable="true" type="xsd:string"/>
+     <element name="product" nillable="true" type="tns1:Product"/>
+     <element name="quantity" type="xsd:int"/>
+     <element name="unitPrice" type="xsd:float"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="receivePaymentResponse">
+
+      <wsdl:part element="impl:receivePaymentResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductInfoRequest">
+
+      <wsdl:part element="impl:getProductInfo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="processPurchaseOrderRequest">
+
+      <wsdl:part element="impl:processPurchaseOrder" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="receivePaymentRequest">
+
+      <wsdl:part element="impl:receivePayment" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="processPurchaseOrderResponse">
+
+      <wsdl:part element="impl:processPurchaseOrderResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductInfoResponse">
+
+      <wsdl:part element="impl:getProductInfoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="KobayashiManufacturerService">
+
+      <wsdl:operation name="getProductInfo">
+
+         <wsdl:input message="impl:getProductInfoRequest" name="getProductInfoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProductInfoResponse" name="getProductInfoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="receivePayment">
+
+         <wsdl:input message="impl:receivePaymentRequest" name="receivePaymentRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:receivePaymentResponse" name="receivePaymentResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="processPurchaseOrder">
+
+         <wsdl:input message="impl:processPurchaseOrderRequest" name="processPurchaseOrderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:processPurchaseOrderResponse" name="processPurchaseOrderResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="KobayashiManufacturerServiceSoapBinding" type="impl:KobayashiManufacturerService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getProductInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProductInfoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProductInfoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="receivePayment">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="receivePaymentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="receivePaymentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="processPurchaseOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="processPurchaseOrderRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="processPurchaseOrderResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="KobayashiManufacturerServiceService">
+
+      <wsdl:port binding="impl:KobayashiManufacturerServiceSoapBinding" name="KobayashiManufacturerService">
+
+         <wsdlsoap:address location="http://localhost:8080/soen487/services/KobayashiManufacturerService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

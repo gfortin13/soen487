@@ -14,8 +14,9 @@ import model.PurchaseOrderList;
 
 public class KobayashiManufacturerService {
 	
-	private final String PRODUCTSXMLPATH = "XMLResources/KobayashiManufacturer/KobayashiProducts.xml";
-	private final String PURCHASEORDERSXMLPATH = "XMLResources/KobayashiManufacturer/KobayashiPurchaseOrders.xml";
+	// IMPORTANT: WRITE RELATIVE PATH ON OWN MACHINE
+	private final String PRODUCTSXMLPATH = "D:/Documents/Guillaume/Eclipse projects/soen487/XMLResources/KobayashiManufacturer/KobayashiProducts.xml";
+	private final String PURCHASEORDERSXMLPATH = "D:/Documents/Guillaume/Eclipse projects/soen487/XMLResources/KobayashiManufacturer/KobayashiPurchaseOrders.xml";
 	private ProductList products;
 	private PurchaseOrderList purchaseOrders; 
 	
@@ -84,13 +85,14 @@ public class KobayashiManufacturerService {
 		loadPurchaseOrders();
 		
 		for(PurchaseOrder currentPurchaseOrder: purchaseOrders.getPurchaseOrderList())
-			if (currentPurchaseOrder.getOrderNum().compareTo(orderNum) == 0)
-				if ((currentPurchaseOrder.getUnitPrice() * currentPurchaseOrder.getQuantity()) == totalPrice)
+			if (currentPurchaseOrder.getOrderNum().compareTo(orderNum) == 0){
+				if ((int)(currentPurchaseOrder.getUnitPrice() * currentPurchaseOrder.getQuantity()*100) == (int)(totalPrice*100))
 				{
 					currentPurchaseOrder.setPaymentStatus("paid");
 					updatePurchaseOrders();
 					return true;
 				}
+			}
 		
 		return false;
 	}
@@ -109,7 +111,7 @@ public class KobayashiManufacturerService {
 	/*
 	 * This private method is used to load the Manufacturer product information from xml into objects.
 	 */
-	public ProductList loadProducts(){
+	private ProductList loadProducts(){
 		JAXBContext context;
 		try {
 			context = JAXBContext.newInstance(ProductList.class);
@@ -129,6 +131,7 @@ public class KobayashiManufacturerService {
 		try {
 			context = JAXBContext.newInstance(ProductList.class);
 			Marshaller productListMarshaller = context.createMarshaller();
+			productListMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			productListMarshaller.marshal(products, new File(PRODUCTSXMLPATH));
 		} catch (JAXBException e) {
 			e.printStackTrace();
@@ -138,12 +141,12 @@ public class KobayashiManufacturerService {
 	/*
 	 * This private method is used to load the Manufacturer purchase order information from xml into objects.
 	 */
-	public PurchaseOrderList loadPurchaseOrders(){
+	private PurchaseOrderList loadPurchaseOrders(){
 		JAXBContext context;
 		try {
 			context = JAXBContext.newInstance(PurchaseOrderList.class);
 			Unmarshaller purchaseOrderListUnmarshaller = context.createUnmarshaller();
-			purchaseOrders = (PurchaseOrderList)purchaseOrderListUnmarshaller.unmarshal(new File(PRODUCTSXMLPATH));
+			purchaseOrders = (PurchaseOrderList)purchaseOrderListUnmarshaller.unmarshal(new File(PURCHASEORDERSXMLPATH));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
@@ -158,7 +161,8 @@ public class KobayashiManufacturerService {
 		try {
 			context = JAXBContext.newInstance(PurchaseOrderList.class);
 			Marshaller purchaseOrderListMarshaller = context.createMarshaller();
-			purchaseOrderListMarshaller.marshal(products, new File(PURCHASEORDERSXMLPATH));
+			purchaseOrderListMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			purchaseOrderListMarshaller.marshal(purchaseOrders, new File(PURCHASEORDERSXMLPATH));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}

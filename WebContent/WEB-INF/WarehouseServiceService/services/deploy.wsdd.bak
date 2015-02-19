@@ -1,0 +1,69 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WarehouseServiceService WSDL service -->
+
+  <service name="WarehouseService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services"/>
+      <parameter name="wsdlServiceElement" value="WarehouseServiceService"/>
+      <parameter name="schemaQualified" value="http://model,http://xml.apache.org/xml-soap,http://services"/>
+      <parameter name="wsdlServicePort" value="WarehouseService"/>
+      <parameter name="className" value="services.WarehouseServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="WarehouseService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="shipGoods" qname="operNS:shipGoods" xmlns:operNS="http://services" returnQName="retNS:shipGoodsReturn" xmlns:retNS="http://services" returnType="rtns:ItemShippingStatusList" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:itemList" xmlns:pns="http://services" type="tns:ItemList" xmlns:tns="http://model"/>
+        <parameter qname="pns:info" xmlns:pns="http://services" type="tns:anyType" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="shipGoods"/>
+
+      <arrayMapping
+        xmlns:ns="http://services"
+        qname="ns:ArrayOf_xsd_anyType"
+        type="java:java.lang.Object[]"
+        innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:ItemList"
+        type="java:model.ItemList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://services"
+        qname="ns:>shipGoodsResponse"
+        type="java:services.ShipGoodsResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://services"
+        qname="ns:>shipGoods"
+        type="java:services.ShipGoods"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:ItemShippingStatusList"
+        type="java:model.ItemShippingStatusList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

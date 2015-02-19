@@ -1,22 +1,33 @@
 package model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@XmlRootElement(name = "itemShippingStatuses")
 public class ItemShippingStatusList{
 
-	HashMap<Item, String> statusList;
-	
-	public ItemShippingStatusList(){
-		statusList = new HashMap<Item, String>();
+	@XmlElement(name = "itemShippingStatus")
+	private List<ItemShippingStatus> itemShippingStatusList;
+
+	public ItemShippingStatusList() {
+		itemShippingStatusList = new ArrayList<ItemShippingStatus>();
+	}
+
+	public List<ItemShippingStatus> getItemShippingStatusList() {
+		return itemShippingStatusList;
+	}
+
+	public void setItemShippingStatusList(
+			List<ItemShippingStatus> itemShippingStatusList) {
+		this.itemShippingStatusList = itemShippingStatusList;
 	}
 	
-	public String put(Item i, String status){
-		if (status.compareTo("shipped") == 0 || status.compareTo("not shipped") == 0)
-		{
-			statusList.put(i, status);
-			return status;
-		}
-		else
-			return null;
+	public boolean add(ItemShippingStatus i){
+		return itemShippingStatusList.add(i);
 	}
+
 }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <products xmlns="http://www.example.org/soen487">
     <product>
-        <manufacturerName>TV</manufacturerName>
-        <productType>Kobayashi</productType>
+        <manufacturerName>Kobayashi</manufacturerName>
+        <productType>TV</productType>
         <unitPrice>999.99</unitPrice>
     </product>
     <product>
-        <manufacturerName>DVD Player</manufacturerName>
-        <productType>Kobayashi</productType>
+        <manufacturerName>Kobayashi</manufacturerName>
+        <productType>DVD Player</productType>
         <unitPrice>99.99</unitPrice>
     </product>
     <product>
-        <manufacturerName>Video Camera</manufacturerName>
-        <productType>Kobayashi</productType>
+        <manufacturerName>Kobayashi</manufacturerName>
+        <productType>Video Camera</productType>
         <unitPrice>399.99</unitPrice>
     </product>
 </products>

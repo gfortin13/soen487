@@ -1,4 +1,4 @@
-package util.XMLUtils;
+package util.jaxb;
 
 import java.io.File;
 
