@@ -10,7 +10,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="itemList" type="tns1:ItemList"/>
-      <element name="info" type="xsd:anyType"/>
+      <element name="info" type="tns1:Customer"/>
      </sequence>
     </complexType>
    </element>
@@ -44,8 +44,22 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="itemList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
     </sequence>
    </complexType>
+   <complexType name="Customer">
+    <sequence>
+     <element name="city" nillable="true" type="xsd:string"/>
+     <element name="country" nillable="true" type="xsd:string"/>
+     <element name="customerReferenceNumber" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="state" nillable="true" type="xsd:string"/>
+     <element name="street1" nillable="true" type="xsd:string"/>
+     <element name="street2" nillable="true" type="xsd:string"/>
+     <element name="zip" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
    <complexType name="ItemShippingStatusList">
-    <sequence/>
+    <sequence>
+     <element name="itemShippingStatusList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
    </complexType>
   </schema>
  </wsdl:types>

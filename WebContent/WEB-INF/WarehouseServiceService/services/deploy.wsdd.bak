@@ -22,7 +22,7 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="shipGoods" qname="operNS:shipGoods" xmlns:operNS="http://services" returnQName="retNS:shipGoodsReturn" xmlns:retNS="http://services" returnType="rtns:ItemShippingStatusList" xmlns:rtns="http://model" soapAction="" >
         <parameter qname="pns:itemList" xmlns:pns="http://services" type="tns:ItemList" xmlns:tns="http://model"/>
-        <parameter qname="pns:info" xmlns:pns="http://services" type="tns:anyType" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:info" xmlns:pns="http://services" type="tns:Customer" xmlns:tns="http://model"/>
       </operation>
       <parameter name="allowedMethods" value="shipGoods"/>
 
@@ -45,6 +45,14 @@
         xmlns:ns="http://services"
         qname="ns:>shipGoodsResponse"
         type="java:services.ShipGoodsResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:Customer"
+        type="java:model.Customer"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""

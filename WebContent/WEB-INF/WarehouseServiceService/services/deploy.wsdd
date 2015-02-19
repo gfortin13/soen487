@@ -12,13 +12,14 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://services" xmlns:retNS="http://services" xmlns:rtns="http://model" name="shipGoods" qname="operNS:shipGoods" returnQName="retNS:shipGoodsReturn" returnType="rtns:ItemShippingStatusList" soapAction="">
         <parameter xmlns:pns="http://services" xmlns:tns="http://model" qname="pns:itemList" type="tns:ItemList"/>
-        <parameter xmlns:pns="http://services" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:info" type="tns:anyType"/>
+        <parameter xmlns:pns="http://services" xmlns:tns="http://model" qname="pns:info" type="tns:Customer"/>
       </operation>
       <parameter name="allowedMethods" value="shipGoods"/>
 
       <arrayMapping xmlns:ns="http://services" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
       <typeMapping xmlns:ns="http://model" qname="ns:ItemList" type="java:model.ItemList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
       <typeMapping xmlns:ns="http://services" qname="ns:&gt;shipGoodsResponse" type="java:services.ShipGoodsResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model" qname="ns:Customer" type="java:model.Customer" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
       <typeMapping xmlns:ns="http://services" qname="ns:&gt;shipGoods" type="java:services.ShipGoods" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
       <typeMapping xmlns:ns="http://model" qname="ns:ItemShippingStatusList" type="java:model.ItemShippingStatusList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>

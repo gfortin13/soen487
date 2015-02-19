@@ -1,5 +1,8 @@
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "customer")
 public class Customer {
 	
 	private int customerReferenceNumber;
@@ -11,8 +14,9 @@ public class Customer {
 	private String zip;
 	private String country;
 	
-	public Customer(int customerReferenceNumber, String name, String street1, String street2, 
-			String city, String state, String zip, String country){
+	public Customer(int customerReferenceNumber, String name, String street1,
+			String street2, String city, String state, String zip,
+			String country) {
 		this.customerReferenceNumber = customerReferenceNumber;
 		this.name = name;
 		this.street1 = street1;
@@ -21,6 +25,9 @@ public class Customer {
 		this.state = state;
 		this.zip = zip;
 		this.country = country;
+	}
+	
+	public Customer(){
 		
 	}
 
