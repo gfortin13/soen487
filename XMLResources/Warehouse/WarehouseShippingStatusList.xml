@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<itemShippingStatuses xmlns="http://www.example.org/soen487">
+    <itemShippingStatus>
+        <item>
+            <manufacturerName>Kobayashi</manufacturerName>
+            <productType>TV</productType>
+            <quantity>1</quantity>
+            <unitPrice>1299.99</unitPrice>
+        </item>
+        <status>Shipped</status>
+    </itemShippingStatus>
+    <itemShippingStatus>
+        <item>
+            <manufacturerName>Kobayashi</manufacturerName>
+            <productType>DVD Player</productType>
+            <quantity>3</quantity>
+            <unitPrice>129.99</unitPrice>
+        </item>
+        <status>Not Shipped</status>
+    </itemShippingStatus>
+    <itemShippingStatus>
+        <item>
+            <manufacturerName>Kobayashi</manufacturerName>
+            <productType>Video Camera</productType>
+            <quantity>2</quantity>
+            <unitPrice>459.99</unitPrice>
+        </item>
+        <status>Shipped</status>
+    </itemShippingStatus>
+</itemShippingStatuses>

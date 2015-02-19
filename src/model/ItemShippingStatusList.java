@@ -3,11 +3,14 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement(name = "itemShippingStatuses")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ItemShippingStatusList{
 
 	@XmlElement(name = "itemShippingStatus")
@@ -21,8 +24,7 @@ public class ItemShippingStatusList{
 		return itemShippingStatusList;
 	}
 
-	public void setItemShippingStatusList(
-			List<ItemShippingStatus> itemShippingStatusList) {
+	public void setItemShippingStatusList(List<ItemShippingStatus> itemShippingStatusList) {
 		this.itemShippingStatusList = itemShippingStatusList;
 	}
 	
