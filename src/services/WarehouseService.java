@@ -17,8 +17,8 @@ import model.ProductList;
 public class WarehouseService {
 
 	// IMPORTANT: WRITE RELATIVE PATH ON OWN MACHINE
-	private final String WAREHOUSEITEMSXMLPATH = "D:/Documents/Guillaume/Eclipse projects/soen487/XMLResources/Warehouse/WarehouseItemList.xml";
-	private final String ITEMSHIPPINGSTATUSXMLPATH = "D:/Documents/Guillaume/Eclipse projects/soen487/XMLResources/Warehouse/WarehouseShippingStatusList.xml";
+	private final String WAREHOUSEITEMSXMLPATH = "XMLResources/Warehouse/WarehouseItemList.xml";
+	private final String ITEMSHIPPINGSTATUSXMLPATH = "XMLResources/Warehouse/WarehouseShippingStatusList.xml";
 	private ItemList warehouseItems;
 	private ItemShippingStatusList itemShippingStatusList;
 	
@@ -71,6 +71,50 @@ public class WarehouseService {
 		replenish();
 		updateItemShippingStatus();
 		return itemShippingStatusList;
+	}
+	
+	public void shipGood(Item item, Customer info){
+		
+		//Create the shipping status list and ;load the xml info into a variable
+		//ItemShippingStatusList statusList = new ItemShippingStatusList();
+		loadItemShippingStatus();
+		loadWarehouseItems();
+
+		//Create an item stub which will simply hold manufacturerName and productType, which
+		//are the only pieces of information needed to compare equivalence
+		Item itemInfo = new Item(item.getManufacturerName(), item.getProductType(), 0, 0);
+		if (warehouseItems.getItemList().contains(itemInfo))
+		{
+			//if the item ordered exists within the xml file, save the full item info to a variable
+			itemInfo = warehouseItems.getItemList().get(warehouseItems.getItemList().indexOf(itemInfo));
+			
+			if (itemInfo.getQuantity() >= item.getQuantity())
+			{
+				//If the quantity on hand is greater than or equal to the amount ordered,
+				//update the quantity and mark the item as shipped
+				itemInfo.setQuantity(itemInfo.getQuantity() - item.getQuantity());
+				ItemShippingStatus itemStatus = new ItemShippingStatus(item,  "shipped");
+				itemShippingStatusList.add(itemStatus);
+			}
+			else
+			{
+				//If there aren't enough items in stock, mark the item as not shipped
+				ItemShippingStatus itemStatus = new ItemShippingStatus(item,  "not shipped");
+				itemShippingStatusList.add(itemStatus);
+			}
+		}
+		else
+		{
+			//If the item does not appear within the xml file, mark the item as not shipped
+			ItemShippingStatus itemStatus = new ItemShippingStatus(item,  "not shipped");
+			itemShippingStatusList.add(itemStatus);
+		}
+	
+		
+		//Call replenish and return the status list
+		replenish();
+		updateItemShippingStatus();
+		//return itemShippingStatusList;
 	}
 	
 	

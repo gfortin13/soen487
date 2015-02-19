@@ -5,22 +5,18 @@
   <service name="WarehouseService" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://services"/>
       <parameter name="wsdlServiceElement" value="WarehouseServiceService"/>
-      <parameter name="schemaQualified" value="http://model,http://xml.apache.org/xml-soap,http://services"/>
+      <parameter name="schemaQualified" value="http://model,http://services"/>
       <parameter name="wsdlServicePort" value="WarehouseService"/>
       <parameter name="className" value="services.WarehouseService"/>
       <parameter name="wsdlPortType" value="WarehouseService"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://services" xmlns:retNS="http://services" xmlns:rtns="http://model" name="shipGoods" qname="operNS:shipGoods" returnQName="retNS:shipGoodsReturn" returnType="rtns:ItemShippingStatusList" soapAction="">
-        <parameter xmlns:pns="http://services" xmlns:tns="http://model" qname="pns:itemList" type="tns:ItemList"/>
+      <operation xmlns:operNS="http://services" name="shipGood" qname="operNS:shipGood" soapAction="">
+        <parameter xmlns:pns="http://services" xmlns:tns="http://model" qname="pns:item" type="tns:Item"/>
         <parameter xmlns:pns="http://services" xmlns:tns="http://model" qname="pns:info" type="tns:Customer"/>
       </operation>
-      <parameter name="allowedMethods" value="shipGoods"/>
+      <parameter name="allowedMethods" value="shipGood"/>
 
-      <arrayMapping xmlns:ns="http://services" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
-      <typeMapping xmlns:ns="http://model" qname="ns:ItemList" type="java:model.ItemList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
-      <typeMapping xmlns:ns="http://services" qname="ns:&gt;shipGoodsResponse" type="java:services.ShipGoodsResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model" qname="ns:Item" type="java:model.Item" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
       <typeMapping xmlns:ns="http://model" qname="ns:Customer" type="java:model.Customer" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
-      <typeMapping xmlns:ns="http://services" qname="ns:&gt;shipGoods" type="java:services.ShipGoods" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
-      <typeMapping xmlns:ns="http://model" qname="ns:ItemShippingStatusList" type="java:model.ItemShippingStatusList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
 </deployment>

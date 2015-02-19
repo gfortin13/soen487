@@ -15,8 +15,8 @@ import model.PurchaseOrderList;
 public class KobayashiManufacturerService {
 	
 	// IMPORTANT: WRITE RELATIVE PATH ON OWN MACHINE
-	private final String PRODUCTSXMLPATH = "D:/Documents/Guillaume/Eclipse projects/soen487/XMLResources/KobayashiManufacturer/KobayashiProducts.xml";
-	private final String PURCHASEORDERSXMLPATH = "D:/Documents/Guillaume/Eclipse projects/soen487/XMLResources/KobayashiManufacturer/KobayashiPurchaseOrders.xml";
+	private final String PRODUCTSXMLPATH = "XMLResources/KobayashiManufacturer/KobayashiProducts.xml";
+	private final String PURCHASEORDERSXMLPATH = "XMLResources/KobayashiManufacturer/KobayashiPurchaseOrders.xml";
 	private ProductList products;
 	private PurchaseOrderList purchaseOrders; 
 	

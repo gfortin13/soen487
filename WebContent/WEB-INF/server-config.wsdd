@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -34,11 +34,11 @@
    <ns1:parameter qname="ns4:aPO" type="ns5:PurchaseOrder" xmlns:ns5="http://model"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="receivePayment processPurchaseOrder getProductInfo"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="KobayashiManufacturerService"/>
-  <ns1:parameter name="className" value="services.KobayashiManufacturerService"/>
-  <ns1:parameter name="wsdlServicePort" value="KobayashiManufacturerService"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://model,http://services"/>
+  <ns1:parameter name="wsdlServicePort" value="KobayashiManufacturerService"/>
+  <ns1:parameter name="className" value="services.KobayashiManufacturerService"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://services"/>
   <ns1:parameter name="wsdlServiceElement" value="KobayashiManufacturerServiceService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:Product" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Product" xmlns:ns6="http://model"/>
@@ -50,21 +50,37 @@
   <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
   <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
  </ns1:service>
+ <ns1:service name="WarehouseService" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="shipGood" qname="ns8:shipGood" soapAction="" xmlns:ns8="http://services">
+   <ns1:parameter qname="ns8:item" type="ns9:Item" xmlns:ns9="http://model"/>
+   <ns1:parameter qname="ns8:info" type="ns10:Customer" xmlns:ns10="http://model"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="shipGood"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="WarehouseService"/>
+  <ns1:parameter name="className" value="services.WarehouseService"/>
+  <ns1:parameter name="wsdlServicePort" value="WarehouseService"/>
+  <ns1:parameter name="schemaQualified" value="http://model,http://services"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://services"/>
+  <ns1:parameter name="wsdlServiceElement" value="WarehouseServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns11:Item" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Item" xmlns:ns11="http://model"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns12:Customer" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:model.Customer" xmlns:ns12="http://model"/>
+ </ns1:service>
  <ns1:service name="Version" provider="java:RPC">
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="XMLReader" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="read" qname="ns8:read" soapAction="" xmlns:ns8="http://XMLUtils.util">
-   <ns1:parameter qname="ns8:url" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-   <ns1:parameter qname="ns8:type" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="read" qname="ns13:read" soapAction="" xmlns:ns13="http://XMLUtils.util">
+   <ns1:parameter qname="ns13:url" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns13:type" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="read"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="XMLReader"/>
-  <ns1:parameter name="className" value="util.XMLUtils.XMLReader"/>
-  <ns1:parameter name="wsdlServicePort" value="XMLReader"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://XMLUtils.util"/>
+  <ns1:parameter name="wsdlServicePort" value="XMLReader"/>
+  <ns1:parameter name="className" value="util.XMLUtils.XMLReader"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://XMLUtils.util"/>
   <ns1:parameter name="wsdlServiceElement" value="XMLReaderService"/>
  </ns1:service>

@@ -4,44 +4,26 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://services" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://xml.apache.org/xml-soap"/>
    <import namespace="http://model"/>
-   <element name="shipGoods">
+   <element name="shipGood">
     <complexType>
      <sequence>
-      <element name="itemList" type="tns1:ItemList"/>
+      <element name="item" type="tns1:Item"/>
       <element name="info" type="tns1:Customer"/>
      </sequence>
     </complexType>
    </element>
-   <complexType name="ArrayOf_xsd_anyType">
-    <sequence>
-     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
-    </sequence>
-   </complexType>
-   <element name="shipGoodsResponse">
-    <complexType>
-     <sequence>
-      <element name="shipGoodsReturn" type="tns1:ItemShippingStatusList"/>
-     </sequence>
-    </complexType>
+   <element name="shipGoodResponse">
+    <complexType/>
    </element>
   </schema>
-  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://services"/>
-   <import namespace="http://model"/>
-   <complexType name="Vector">
-    <sequence>
-     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
-    </sequence>
-   </complexType>
-  </schema>
   <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://services"/>
-   <import namespace="http://xml.apache.org/xml-soap"/>
-   <complexType name="ItemList">
+   <complexType name="Item">
     <sequence>
-     <element name="itemList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="manufacturerName" nillable="true" type="xsd:string"/>
+     <element name="productType" nillable="true" type="xsd:string"/>
+     <element name="quantity" type="xsd:int"/>
+     <element name="unitPrice" type="xsd:float"/>
     </sequence>
    </complexType>
    <complexType name="Customer">
@@ -56,25 +38,20 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="zip" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
-   <complexType name="ItemShippingStatusList">
-    <sequence>
-     <element name="itemShippingStatusList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
-    </sequence>
-   </complexType>
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="shipGoodsRequest">
+   <wsdl:message name="shipGoodRequest">
 
-      <wsdl:part element="impl:shipGoods" name="parameters">
+      <wsdl:part element="impl:shipGood" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="shipGoodsResponse">
+   <wsdl:message name="shipGoodResponse">
 
-      <wsdl:part element="impl:shipGoodsResponse" name="parameters">
+      <wsdl:part element="impl:shipGoodResponse" name="parameters">
 
       </wsdl:part>
 
@@ -82,13 +59,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="WarehouseService">
 
-      <wsdl:operation name="shipGoods">
+      <wsdl:operation name="shipGood">
 
-         <wsdl:input message="impl:shipGoodsRequest" name="shipGoodsRequest">
+         <wsdl:input message="impl:shipGoodRequest" name="shipGoodRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:shipGoodsResponse" name="shipGoodsResponse">
+         <wsdl:output message="impl:shipGoodResponse" name="shipGoodResponse">
 
        </wsdl:output>
 
@@ -100,17 +77,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="shipGoods">
+      <wsdl:operation name="shipGood">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="shipGoodsRequest">
+         <wsdl:input name="shipGoodRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="shipGoodsResponse">
+         <wsdl:output name="shipGoodResponse">
 
             <wsdlsoap:body use="literal"/>
 
